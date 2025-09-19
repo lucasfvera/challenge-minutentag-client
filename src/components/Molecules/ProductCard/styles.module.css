@@ -1,0 +1,54 @@
+.productCard {
+  display: grid;
+  position: relative;
+  z-index: 10;
+  width: 155px;
+  height: 195px;
+  justify-items: center;
+  background: #fff;
+  border-radius: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "img img"
+    "price btn";
+}
+
+li:nth-child(odd) .productCard {
+  border-top-right-radius: 2rem;
+}
+
+li:nth-child(even) .productCard {
+  border-top-left-radius: 2rem;
+}
+
+.productCard__header {
+  grid-area: header;
+  padding: 1rem 1rem 0 1rem;
+  text-wrap: nowrap;
+}
+.productCard__img {
+  grid-area: img;
+  z-index: 0;
+  object-fit: scale-down;
+  position: absolute;
+  top: 0;
+  max-width: 122px;
+  max-height: 122px;
+}
+.productCard__price {
+  grid-area: price;
+  padding: 0 0 0.5rem 1rem;
+}
+.productCard__btn {
+  grid-area: btn;
+  position: absolute;
+  background: var(--primary-color);
+  cursor: pointer;
+  padding: 0.5rem;
+  bottom: 0;
+  right: 0;
+  border-top-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}

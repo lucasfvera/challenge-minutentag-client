@@ -1,10 +1,25 @@
+@import url("./normalize.css");
+
 :root {
-    font-family: Arial, sans-serif;
+  font-family: "Inter", sans-serif;
+  color: var(--dark-text);
 
-    background: #fafafa;
+  /* background: #fafafa; */
+  background: #969696;
 
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --dark-text: #323232;
+  --medium-dark-text: #646464;
+  --medium-text: #969696;
+  --primary-color: #ff9f24;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
