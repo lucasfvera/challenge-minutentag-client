@@ -1,23 +1,19 @@
-import { Route, Switch } from 'wouter';
+import { Redirect, Route, Switch } from 'wouter';
 import './App.css';
+import { ProductsPage } from './pages/Products.page';
+import { ProductDetailPage } from './pages/ProductDetail.page';
 
 function App() {
     return (
         <Switch>
-            {/* <h1>E-commerce Beer</h1> */}
+            <Route path={'/products'} component={ProductsPage} />
             <Route
-                path={'/products'}
-                component={() => <div>Products page</div>}
+                path={'/products/:productId-productBrand'}
+                component={ProductDetailPage}
             />
-            <Route
-                path={'/products/:productId-:productBrand'}
-                component={(params) => (
-                    <div>
-                        Products page:{' '}
-                        {params.params['productId-:productBrand']}
-                    </div>
-                )}
-            />
+            <Route path={'/'}>
+                <Redirect to="/products" />
+            </Route>
             <Route>404 - Not Found</Route>
         </Switch>
     );
