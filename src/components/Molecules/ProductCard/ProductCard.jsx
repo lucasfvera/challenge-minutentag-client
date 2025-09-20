@@ -39,6 +39,7 @@ export const ProductCard = () => {
         </Typography>
         <button
           onClick={(e) => {
+            e.preventDefault();
             e.stopPropagation();
             window.alert("Product added to the cart");
           }}
