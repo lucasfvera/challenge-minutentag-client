@@ -1,16 +1,15 @@
-import { Typography } from "@/components/Atoms/Typography/Typography";
-import { PlusIcon } from "@/components/Atoms/Icons/PlusIcon";
+import { Typography } from "../../Atoms/Typography/Typography";
+import { PlusIcon } from "../../Atoms/Icons/PlusIcon";
 import styles from "./styles.module.css";
 
 export const ProductCard = () => {
   return (
-    <article aria-labelledby="item-name" className={styles.productCard}>
+    <article className={styles.productCard}>
       <Typography
         className={styles.productCard__header}
         as="h4"
         type="subheader"
         weight="medium"
-        id="item-name"
       >
         Modelo Especial
       </Typography>
