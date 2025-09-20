@@ -49,7 +49,7 @@ export function ProductDetailPage() {
                 12 - 24oz
               </Typography>
             </Button>
-            <Button variant="secondary" size="small">
+            <Button variant="secondary" size="small" isActive>
               <Typography as="span" type="body" color={"inherit"}>
                 18 - 12oz
               </Typography>

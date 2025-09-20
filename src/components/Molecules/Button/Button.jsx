@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 
 /**
  *
- * @param {{children: React.ReactNode, variant?: 'primary' | 'secondary' | 'chip', size?: 'small' | 'large', fullwidth?: boolean & React.ButtonHTMLAttributes<HTMLButtonElement>}} props
+ * @param {{children: React.ReactNode, variant?: 'primary' | 'secondary' | 'chip', size?: 'small' | 'large', fullwidth?: boolean, isActive?: boolean & React.ButtonHTMLAttributes<HTMLButtonElement>}} props
  * @returns
  */
 export const Button = ({
@@ -11,13 +11,15 @@ export const Button = ({
   variant = "primary",
   size = "large",
   fullwidth = false,
+  isActive = false,
   ...props
 }) => {
   const fullWidthClass = fullwidth ? styles.fullwidth : "";
+  const activeFilterClass = isActive ? "" : styles.inactive;
 
   return (
     <button
-      className={`${styles.baseButton} ${styles[variant]} ${styles[size]} ${fullWidthClass}`}
+      className={`${styles.baseButton} ${styles[variant]} ${styles[size]} ${fullWidthClass} ${activeFilterClass}`}
       {...props}
     >
       {children}

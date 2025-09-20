@@ -26,6 +26,11 @@
   border-radius: 1rem;
 }
 
+/* Class for chip buttons */
+.inactive {
+  color: var(--medium-text);
+}
+
 .large {
   padding: 1rem;
 }
