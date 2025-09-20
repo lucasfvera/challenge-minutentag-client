@@ -7,12 +7,11 @@ function App() {
   return (
     <RootLayout>
       <Switch>
-        <Route path={"/products"} component={ProductsPage}>
-          <Route
-            path={"/:productId-productBrand"}
-            component={ProductDetailPage}
-          />
-        </Route>
+        <Route
+          path={"/products/:productId-productBrand"}
+          component={ProductDetailPage}
+        />
+        <Route path={"/products"} component={ProductsPage} />
         <Route path={"/"}>
           <Redirect to="/products" />
         </Route>
