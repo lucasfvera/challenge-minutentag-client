@@ -25,7 +25,7 @@ export const ProductDetails = () => {
           >
             $26.40
           </Typography>
-          <Typography type="caption" color="var(--medium-text)">
+          <Typography type="body" color="var(--medium-text)">
             Origin: Import | Stock: 456
           </Typography>
         </div>

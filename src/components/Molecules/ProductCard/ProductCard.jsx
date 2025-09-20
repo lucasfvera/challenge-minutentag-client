@@ -1,6 +1,7 @@
 import { Typography } from "../../Atoms/Typography/Typography";
 import { PlusIcon } from "../../Atoms/Icons/PlusIcon";
 import { Link } from "wouter";
+import { StarIcon } from "../../Atoms/Icons/StarIcon";
 import styles from "./styles.module.css";
 
 export const ProductCard = () => {
@@ -23,6 +24,12 @@ export const ProductCard = () => {
           height={100}
         />
 
+        <div className={styles.productCard__star}>
+          <StarIcon />
+          <Typography type="caption" weight="medium" color="var(--medium-text)">
+            4.9
+          </Typography>
+        </div>
         <Typography
           className={styles.productCard__price}
           type="subheader"

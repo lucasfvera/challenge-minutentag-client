@@ -10,8 +10,12 @@
   font-size: 16px;
 }
 
-.caption {
+.body {
   font-size: 14px;
+}
+
+.caption {
+  font-size: 12px;
 }
 
 .regular {

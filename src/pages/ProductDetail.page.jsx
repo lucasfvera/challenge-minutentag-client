@@ -45,17 +45,17 @@ export function ProductDetailPage() {
           </Typography>
           <div style={{ display: "flex", gap: "1rem" }}>
             <Button variant="secondary" size="small">
-              <Typography as="span" type="caption" color={"inherit"}>
+              <Typography as="span" type="body" color={"inherit"}>
                 12 - 24oz
               </Typography>
             </Button>
             <Button variant="secondary" size="small">
-              <Typography as="span" type="caption" color={"inherit"}>
+              <Typography as="span" type="body" color={"inherit"}>
                 18 - 12oz
               </Typography>
             </Button>
             <Button variant="secondary" size="small">
-              <Typography as="span" type="caption" color={"inherit"}>
+              <Typography as="span" type="body" color={"inherit"}>
                 Half Barrel
               </Typography>
             </Button>

@@ -10,10 +10,11 @@
   box-shadow: 0 0.5rem 20px 0px rgba(0, 0, 0, 0.05);
   border-radius: 1rem;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto auto;
   grid-template-areas:
     "header header"
     "img img"
+    "star btn"
     "price btn";
 }
 
@@ -42,6 +43,13 @@ li:nth-child(even) .productCard {
 .productCard__price {
   grid-area: price;
   padding: 0 0 0.5rem 1rem;
+}
+.productCard__star {
+  display: flex;
+  gap: 0.375rem;
+  align-items: center;
+  z-index: 1;
+  grid-area: star;
 }
 .productCard__btn {
   grid-area: btn;
