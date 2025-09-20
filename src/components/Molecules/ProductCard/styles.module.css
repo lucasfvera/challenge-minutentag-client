@@ -18,6 +18,11 @@
     "price btn";
 }
 
+.productCard:hover {
+  transform: scale(1.03);
+  transition: all 0.2s ease-out;
+}
+
 li:nth-child(odd) .productCard {
   border-top-right-radius: 2rem;
 }
