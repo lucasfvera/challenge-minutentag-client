@@ -11,8 +11,14 @@
   flex: 1;
   margin-top: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-rows: repeat(auto-fill, 200px);
   gap: 1rem;
   justify-items: center;
   min-height: 0;
   overflow: auto;
+}
+
+.productsList__item {
+  width: 100%;
+  max-width: 155px;
 }

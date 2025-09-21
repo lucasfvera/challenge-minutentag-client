@@ -1,6 +1,7 @@
 .productCard {
   display: grid;
   position: relative;
+  cursor: pointer;
   z-index: 10;
   width: 100%;
   max-width: 155px;
@@ -39,7 +40,7 @@ li:nth-child(even) .productCard {
 .productCard__img {
   grid-area: img;
   z-index: 0;
-  object-fit: scale-down;
+  object-fit: contain;
   position: absolute;
   top: 0;
   max-width: 122px;

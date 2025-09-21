@@ -28,7 +28,7 @@ export function ProductDetailPage() {
     <>
       <DetailsPageNavigation />
       <main>
-        <ProductDetails />
+        <ProductDetails productId={productId} productBrand={productBrand} />
         {/* <ProductActions /> */}
         <div
           style={{
