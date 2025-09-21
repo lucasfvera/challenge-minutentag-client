@@ -1,16 +1,16 @@
-import { render, screen } from '@testing-library/react';
-import { BackArrowIcon } from './BackArrowIcon';
-import { describe, it, expect } from 'vitest';
+import { render, screen } from "../../../utils/testUtils";
+import { BackArrowIcon } from "./BackArrowIcon";
+import { describe, it, expect } from "vitest";
 
-describe('BackArrowIcon', () => {
-    it('should render the icon', () => {
-        // Arrange
-        render(<BackArrowIcon />);
+describe("BackArrowIcon", () => {
+  it("should render the icon", () => {
+    // Arrange
+    render(<BackArrowIcon />);
 
-        // Act
-        const icon = screen.getByTitle('Back Arrow Icon');
+    // Act
+    const icon = screen.getByTitle("Back Arrow Icon");
 
-        // Assert
-        expect(icon).toBeInTheDocument();
-    });
+    // Assert
+    expect(icon).toBeInTheDocument();
+  });
 });

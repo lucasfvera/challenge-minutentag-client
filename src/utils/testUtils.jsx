@@ -1,7 +1,14 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { render } from "@testing-library/react";
 
+export const mockQueryClient = new QueryClient();
+
 const AllTheProviders = ({ children }) => {
-  return <>{children}</>;
+  return (
+    <QueryClientProvider client={mockQueryClient}>
+      {children}
+    </QueryClientProvider>
+  );
 };
 
 const customRender = (ui, options) =>

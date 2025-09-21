@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "../../../utils/testUtils";
 import { Typography } from "./Typography";
 import { describe, it, expect } from "vitest";
 import styles from "./styles.module.css";
