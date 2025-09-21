@@ -5,7 +5,9 @@ export const BagIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    aria-labelledby="bag-icon-title"
   >
+    <title id="bag-icon-title">Bag Icon</title>
     <path
       d="M7.75 6C7.75 3.65289 9.65289 1.75 12 1.75C14.3471 1.75 16.25 3.65289 16.25 6"
       stroke="#FF9F24"
