@@ -35,13 +35,7 @@ export const ProductActions = ({
           <div>Loading</div>
         )}
       </div>
-      <div
-        style={{
-          display: "flex",
-          gap: "1.5rem",
-          marginTop: "auto",
-        }}
-      >
+      <div className={styles.productActions__ctas}>
         <Button
           variant="secondary"
           onClick={() => window.alert("Redirecting to cart")}
