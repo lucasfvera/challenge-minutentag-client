@@ -3,9 +3,13 @@ import { useProduct } from "../../../hooks/react-query/useProducts";
 import { Typography } from "../../Atoms/Typography/Typography";
 import styles from "./styles.module.css";
 import { BRAND_ICON_MAP } from "../../../utils/brandIconMap";
+import { useStockPrice } from "../../../hooks/react-query/useStockPrice";
 
-export const ProductDetails = ({ productId, productBrand }) => {
+export const ProductDetails = ({ productId, productBrand, sizeCode }) => {
   const { data: productInfo, status } = useProduct(productId);
+  const { data: stockPrice, isPending: isPendingStockPrice } = useStockPrice(
+    sizeCode || productInfo?.skus[0].code
+  );
   const [isExpanded, setIsExpanded] = useState(false);
 
   if (status === "pending") return <div>Loading</div>;
@@ -40,10 +44,11 @@ export const ProductDetails = ({ productId, productBrand }) => {
             color="var(--primary-color)"
             className={styles.productDetailsCard__price}
           >
-            $26.40
+            ${isPendingStockPrice ? "-" : stockPrice.price}
           </Typography>
           <Typography type="body" color="var(--medium-text)">
-            Origin: {productInfo.origin} | Stock: 456
+            Origin: {productInfo.origin} | Stock:{" "}
+            {isPendingStockPrice ? "-" : stockPrice.stock}
           </Typography>
         </div>
         <div className={styles.productDetailsCard__description}>

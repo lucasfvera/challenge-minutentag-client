@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
  * @returns
  */
 const getStockPrice = (sku) => {
+  if (!sku) return { stock: "-", price: "-" };
   return fetch(
     `${import.meta.env.VITE_PRODUCT_SERVICE_BASE_URL}/stock-price/${sku}`
   ).then(async (res) => {

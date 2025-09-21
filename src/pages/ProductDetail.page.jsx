@@ -1,12 +1,13 @@
 import { useRoute } from "wouter";
-import { Typography } from "../components/Atoms/Typography/Typography";
 import { DetailsPageNavigation } from "../components/Organisms/DetailsPageNavigation/DetailsPageNavigation";
 import { ProductDetails } from "../components/Organisms/ProductDetails/ProductDetails";
-import { Button } from "../components/Molecules/Button/Button";
-import { BagIcon } from "../components/Atoms/Icons/BagIcon";
+import { useState } from "react";
+import { ProductActions } from "../components/Organisms/ProductActions/ProductActions";
 
 export function ProductDetailPage() {
   const [match, params] = useRoute("/products/:productId-productBrand");
+  const [selectedSize, setSelectedSize] = useState(null);
+
   if (!match) {
     console.error("Route didn't match");
     return null;
@@ -28,55 +29,16 @@ export function ProductDetailPage() {
     <>
       <DetailsPageNavigation />
       <main>
-        <ProductDetails productId={productId} productBrand={productBrand} />
-        {/* <ProductActions /> */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            flex: 1,
-            gap: "1.25rem",
-            background: "white",
-            padding: "0 1.5rem 2.5rem 1.5rem",
-          }}
-        >
-          <Typography as="h5" type="subheader" weight="bold">
-            Size
-          </Typography>
-          <div style={{ display: "flex", gap: "1rem" }}>
-            <Button variant="secondary" size="small">
-              <Typography as="span" type="body" color={"inherit"}>
-                12 - 24oz
-              </Typography>
-            </Button>
-            <Button variant="secondary" size="small" isActive>
-              <Typography as="span" type="body" color={"inherit"}>
-                18 - 12oz
-              </Typography>
-            </Button>
-            <Button variant="secondary" size="small">
-              <Typography as="span" type="body" color={"inherit"}>
-                Half Barrel
-              </Typography>
-            </Button>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              gap: "1.5rem",
-              marginTop: "auto",
-            }}
-          >
-            <Button variant="secondary">
-              <BagIcon />
-            </Button>
-            <Button fullwidth>
-              <Typography as="span" weight="bold" type="subheader">
-                Add to cart
-              </Typography>
-            </Button>
-          </div>
-        </div>
+        <ProductDetails
+          productId={productId}
+          productBrand={productBrand}
+          sizeCode={selectedSize}
+        />
+        <ProductActions
+          productId={productId}
+          setSelectedSize={setSelectedSize}
+          selectedSize={selectedSize}
+        />
       </main>
     </>
   );

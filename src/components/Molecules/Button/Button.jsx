@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 
 /**
  *
- * @param {{children: React.ReactNode, variant?: 'primary' | 'secondary' | 'chip', size?: 'small' | 'large', fullwidth?: boolean, isActive?: boolean & React.ButtonHTMLAttributes<HTMLButtonElement>}} props
+ * @param {{children: React.ReactNode, variant?: 'primary' | 'secondary' | 'chip', size?: 'small' | 'large', fullwidth?: boolean, isActive?: boolean, onClick?: (...args: any[]) => void}} props
  * @returns
  */
 export const Button = ({
@@ -15,7 +15,8 @@ export const Button = ({
   ...props
 }) => {
   const fullWidthClass = fullwidth ? styles.fullwidth : "";
-  const activeFilterClass = isActive ? "" : styles.inactive;
+  const activeFilterClass =
+    size === "small" && !isActive ? styles.inactive : "";
 
   return (
     <button
