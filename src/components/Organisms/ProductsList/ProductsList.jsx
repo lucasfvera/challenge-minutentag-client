@@ -1,6 +1,7 @@
 import { useProducts } from "../../../hooks/react-query/useProducts";
 import { Typography } from "../../Atoms/Typography/Typography";
 import { ProductCard } from "../../Molecules/ProductCard/ProductCard";
+import { ProductCardSkeleton } from "../../Molecules/ProductCardSkeleton/ProductCardSkeleton";
 import styles from "./styles.module.css";
 
 export const ProductsList = () => {
@@ -13,12 +14,11 @@ export const ProductsList = () => {
       </Typography>
       <ul className={styles.productsList}>
         {status === "pending" ? (
-          Array(10)
+          Array(5)
             .fill(1)
             .map((el, i) => (
               <li key={i}>
-                loading
-                {/* <ProductCardSkeleton /> */}
+                <ProductCardSkeleton />
               </li>
             ))
         ) : status === "error" ? (
