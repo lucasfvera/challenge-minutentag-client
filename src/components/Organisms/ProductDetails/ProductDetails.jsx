@@ -7,18 +7,22 @@ import { useStockPrice } from "../../../hooks/react-query/useStockPrice";
 
 export const ProductDetails = ({ productId, productBrand, sizeCode }) => {
   const { data: productInfo, status } = useProduct(productId);
-  const { data: stockPrice, isPending: isPendingStockPrice } = useStockPrice(
-    sizeCode || productInfo?.skus[0].code
-  );
+  const {
+    data: stockPrice,
+    isPending: isPendingStockPrice,
+    status: statusStockPrice,
+  } = useStockPrice(sizeCode || productInfo?.skus[0].code);
   const [isExpanded, setIsExpanded] = useState(false);
 
   if (status === "pending") return <div>Loading</div>;
+  if (status === "error")
+    return <div>Something failed while fetching the data. Try again later</div>;
 
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
   };
 
-  const description = productInfo.information;
+  const description = productInfo?.information;
   const truncatedDescription = description.substring(0, 200) + "...";
 
   const imgSrc = BRAND_ICON_MAP[productBrand];
@@ -44,11 +48,11 @@ export const ProductDetails = ({ productId, productBrand, sizeCode }) => {
             color="var(--primary-color)"
             className={styles.productDetailsCard__price}
           >
-            ${isPendingStockPrice ? "-" : stockPrice.price}
+            ${statusStockPrice !== "success" ? "-" : stockPrice.price}
           </Typography>
           <Typography type="body" color="var(--medium-text)">
             Origin: {productInfo.origin} | Stock:{" "}
-            {isPendingStockPrice ? "-" : stockPrice.stock}
+            {statusStockPrice !== "success" ? "-" : stockPrice.stock}
           </Typography>
         </div>
         <div className={styles.productDetailsCard__description}>

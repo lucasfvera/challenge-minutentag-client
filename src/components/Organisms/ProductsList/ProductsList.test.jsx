@@ -62,7 +62,9 @@ describe("ProductsList component", () => {
       .mockReturnValue({ data: null, status: "error" });
     render(<ProductsList />);
 
-    const errorMsg = await screen.findByText("Something failed");
+    const errorMsg = await screen.findByText("Something failed", {
+      exact: false,
+    });
 
     // Assert
     expect(errorMsg).toBeInTheDocument();

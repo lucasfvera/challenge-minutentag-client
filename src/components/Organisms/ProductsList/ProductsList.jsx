@@ -22,7 +22,7 @@ export const ProductsList = () => {
               </li>
             ))
         ) : status === "error" ? (
-          <div>Something failed</div>
+          <div>Something failed while loading. Please try again later</div>
         ) : (
           products.map((product) => (
             <li className={styles.productsList__item} key={product.id}>

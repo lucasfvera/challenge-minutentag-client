@@ -31,8 +31,10 @@ export const ProductActions = ({
               </Typography>
             </Button>
           ))
-        ) : (
+        ) : status === "pending" ? (
           <div>Loading</div>
+        ) : (
+          <div>Something failed while fetching the data. Try again later</div>
         )}
       </div>
       <div className={styles.productActions__ctas}>
